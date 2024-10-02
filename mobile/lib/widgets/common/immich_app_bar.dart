@@ -35,10 +35,33 @@ class ImmichAppBar extends ConsumerWidget implements PreferredSizeWidget {
 
     buildProfileIndicator() {
       return InkWell(
-        onTap: () => showDialog(
+        onTap: () => showGeneralDialog(
           context: context,
           useRootNavigator: false,
-          builder: (ctx) => const ImmichAppBarDialog(),
+          barrierDismissible: true,
+          barrierLabel: "Dismiss",
+          transitionDuration: const Duration(milliseconds: 200),
+          pageBuilder: (_, __, ___) => ImmichAppBarDialog(),
+          transitionBuilder: (_, anim, __, child) {
+            return SlideTransition(
+              position: Tween<Offset>(
+                begin: const Offset(0, 0),
+                end: const Offset(0, 0.05),
+              ).animate(
+                CurvedAnimation(
+                  parent: anim,
+                  curve: Curves.easeInOut,
+                ),
+              ),
+              child: FadeTransition(
+                opacity: CurvedAnimation(
+                  parent: anim,
+                  curve: Curves.easeInOut,
+                ),
+                child: child,
+              ),
+            );
+          },
         ),
         borderRadius: BorderRadius.circular(12),
         child: Badge(
