@@ -179,8 +179,6 @@ ThemeData getThemeData({required ColorScheme colorScheme}) {
         fontWeight: FontWeight.bold,
         fontSize: 18,
       ),
-      backgroundColor:
-          isDark ? colorScheme.surfaceContainer : colorScheme.surface,
       foregroundColor: primaryColor,
       elevation: 0,
       scrolledUnderElevation: 0,
@@ -237,8 +235,6 @@ ThemeData getThemeData({required ColorScheme colorScheme}) {
       ),
     ),
     navigationBarTheme: NavigationBarThemeData(
-      backgroundColor:
-          isDark ? colorScheme.surfaceContainer : colorScheme.surface,
       labelTextStyle: const WidgetStatePropertyAll(
         TextStyle(
           fontSize: 13,
