@@ -57,6 +57,7 @@ class ImmichAppBarDialog extends HookConsumerWidget {
                   ? 'assets/immich-text-dark.png'
                   : 'assets/immich-text-light.png',
               height: 16,
+              color: theme.colorScheme.primary,
             ),
           ),
         ],

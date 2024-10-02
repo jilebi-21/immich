@@ -170,11 +170,20 @@ class ImmichAppBar extends ConsumerWidget implements PreferredSizeWidget {
                   }
                   return Padding(
                     padding: const EdgeInsets.only(top: 3.0),
-                    child: SvgPicture.asset(
-                      context.isDarkTheme
-                          ? 'assets/immich-logo-inline-dark.svg'
-                          : 'assets/immich-logo-inline-light.svg',
-                      height: 40,
+                    child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        SvgPicture.asset(
+                          'assets/immich-logo.svg',
+                          height: 28,
+                        ),
+                        const SizedBox(width: 8),
+                        Image.asset(
+                          'assets/immich-text-dark.png',
+                          height: 20,
+                          color: context.colorScheme.primary,
+                        ),
+                      ],
                     ),
                   );
                 },
