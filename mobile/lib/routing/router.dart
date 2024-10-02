@@ -86,30 +86,30 @@ class AppRouter extends RootStackRouter {
 
   @override
   late final List<AutoRoute> routes = [
-    AutoRoute(page: SplashScreenRoute.page, initial: true),
-    AutoRoute(
+    CupertinoRoute(page: SplashScreenRoute.page, initial: true),
+    CupertinoRoute(
       page: PermissionOnboardingRoute.page,
       guards: [_authGuard, _duplicateGuard],
     ),
-    AutoRoute(page: LoginRoute.page, guards: [_duplicateGuard]),
-    AutoRoute(page: ChangePasswordRoute.page),
+    CupertinoRoute(page: LoginRoute.page, guards: [_duplicateGuard]),
+    CupertinoRoute(page: ChangePasswordRoute.page),
     CustomRoute(
       page: TabControllerRoute.page,
       guards: [_authGuard, _duplicateGuard],
       children: [
-        AutoRoute(
+        CupertinoRoute(
           page: PhotosRoute.page,
           guards: [_authGuard, _duplicateGuard],
         ),
-        AutoRoute(
+        CupertinoRoute(
           page: SearchRoute.page,
           guards: [_authGuard, _duplicateGuard],
         ),
-        AutoRoute(
+        CupertinoRoute(
           page: SharingRoute.page,
           guards: [_authGuard, _duplicateGuard],
         ),
-        AutoRoute(
+        CupertinoRoute(
           page: LibraryRoute.page,
           guards: [_authGuard, _duplicateGuard],
         ),
@@ -121,27 +121,33 @@ class AppRouter extends RootStackRouter {
       guards: [_authGuard, _duplicateGuard],
       transitionsBuilder: CustomTransitionsBuilders.zoomedPage,
     ),
-    AutoRoute(
+    CupertinoRoute(
       page: BackupControllerRoute.page,
       guards: [_authGuard, _duplicateGuard, _backupPermissionGuard],
     ),
-    AutoRoute(
+    CupertinoRoute(
       page: AllPlacesRoute.page,
       guards: [_authGuard, _duplicateGuard],
     ),
-    AutoRoute(
+    CupertinoRoute(
       page: CreateAlbumRoute.page,
       guards: [_authGuard, _duplicateGuard],
     ),
-    AutoRoute(page: EditImageRoute.page),
-    AutoRoute(page: CropImageRoute.page),
-    AutoRoute(page: FavoritesRoute.page, guards: [_authGuard, _duplicateGuard]),
-    AutoRoute(page: AllVideosRoute.page, guards: [_authGuard, _duplicateGuard]),
-    AutoRoute(
+    CupertinoRoute(page: EditImageRoute.page),
+    CupertinoRoute(page: CropImageRoute.page),
+    CupertinoRoute(
+      page: FavoritesRoute.page,
+      guards: [_authGuard, _duplicateGuard],
+    ),
+    CupertinoRoute(
+      page: AllVideosRoute.page,
+      guards: [_authGuard, _duplicateGuard],
+    ),
+    CupertinoRoute(
       page: AllMotionPhotosRoute.page,
       guards: [_authGuard, _duplicateGuard],
     ),
-    AutoRoute(
+    CupertinoRoute(
       page: RecentlyAddedRoute.page,
       guards: [_authGuard, _duplicateGuard],
     ),
@@ -155,7 +161,7 @@ class AppRouter extends RootStackRouter {
       guards: [_authGuard, _duplicateGuard],
       transitionsBuilder: TransitionsBuilders.slideBottom,
     ),
-    AutoRoute(
+    CupertinoRoute(
       page: AlbumViewerRoute.page,
       guards: [_authGuard, _duplicateGuard],
     ),
@@ -164,11 +170,11 @@ class AppRouter extends RootStackRouter {
       guards: [_authGuard, _duplicateGuard],
       transitionsBuilder: TransitionsBuilders.slideBottom,
     ),
-    AutoRoute(
+    CupertinoRoute(
       page: BackupAlbumSelectionRoute.page,
       guards: [_authGuard, _duplicateGuard],
     ),
-    AutoRoute(
+    CupertinoRoute(
       page: AlbumPreviewRoute.page,
       guards: [_authGuard, _duplicateGuard],
     ),
@@ -177,33 +183,48 @@ class AppRouter extends RootStackRouter {
       guards: [_authGuard, _duplicateGuard],
       transitionsBuilder: TransitionsBuilders.slideBottom,
     ),
-    AutoRoute(page: SettingsRoute.page, guards: [_duplicateGuard]),
-    AutoRoute(page: SettingsSubRoute.page, guards: [_duplicateGuard]),
-    AutoRoute(page: AppLogRoute.page, guards: [_duplicateGuard]),
-    AutoRoute(page: AppLogDetailRoute.page, guards: [_duplicateGuard]),
-    AutoRoute(page: ArchiveRoute.page, guards: [_authGuard, _duplicateGuard]),
-    AutoRoute(page: PartnerRoute.page, guards: [_authGuard, _duplicateGuard]),
-    AutoRoute(
+    CupertinoRoute(page: SettingsRoute.page, guards: [_duplicateGuard]),
+    CupertinoRoute(page: SettingsSubRoute.page, guards: [_duplicateGuard]),
+    CupertinoRoute(page: AppLogRoute.page, guards: [_duplicateGuard]),
+    CupertinoRoute(page: AppLogDetailRoute.page, guards: [_duplicateGuard]),
+    CupertinoRoute(
+      page: ArchiveRoute.page,
+      guards: [_authGuard, _duplicateGuard],
+    ),
+    CupertinoRoute(
+      page: PartnerRoute.page,
+      guards: [_authGuard, _duplicateGuard],
+    ),
+    CupertinoRoute(
       page: PartnerDetailRoute.page,
       guards: [_authGuard, _duplicateGuard],
     ),
-    AutoRoute(
+    CupertinoRoute(
       page: PersonResultRoute.page,
       guards: [_authGuard, _duplicateGuard],
     ),
-    AutoRoute(page: AllPeopleRoute.page, guards: [_authGuard, _duplicateGuard]),
-    AutoRoute(page: MemoryRoute.page, guards: [_authGuard, _duplicateGuard]),
-    AutoRoute(page: MapRoute.page, guards: [_authGuard, _duplicateGuard]),
-    AutoRoute(
+    CupertinoRoute(
+      page: AllPeopleRoute.page,
+      guards: [_authGuard, _duplicateGuard],
+    ),
+    CupertinoRoute(
+      page: MemoryRoute.page,
+      guards: [_authGuard, _duplicateGuard],
+    ),
+    CupertinoRoute(page: MapRoute.page, guards: [_authGuard, _duplicateGuard]),
+    CupertinoRoute(
       page: AlbumOptionsRoute.page,
       guards: [_authGuard, _duplicateGuard],
     ),
-    AutoRoute(page: TrashRoute.page, guards: [_authGuard, _duplicateGuard]),
-    AutoRoute(
+    CupertinoRoute(
+      page: TrashRoute.page,
+      guards: [_authGuard, _duplicateGuard],
+    ),
+    CupertinoRoute(
       page: SharedLinkRoute.page,
       guards: [_authGuard, _duplicateGuard],
     ),
-    AutoRoute(
+    CupertinoRoute(
       page: SharedLinkEditRoute.page,
       guards: [_authGuard, _duplicateGuard],
     ),
@@ -217,7 +238,7 @@ class AppRouter extends RootStackRouter {
       page: MapLocationPickerRoute.page,
       guards: [_authGuard, _duplicateGuard],
     ),
-    AutoRoute(
+    CupertinoRoute(
       page: BackupOptionsRoute.page,
       guards: [_authGuard, _duplicateGuard],
     ),
@@ -226,7 +247,7 @@ class AppRouter extends RootStackRouter {
       guards: [_authGuard, _duplicateGuard],
       transitionsBuilder: TransitionsBuilders.noTransition,
     ),
-    AutoRoute(
+    CupertinoRoute(
       page: HeaderSettingsRoute.page,
       guards: [_duplicateGuard],
     ),
