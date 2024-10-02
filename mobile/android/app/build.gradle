@@ -74,6 +74,14 @@ android {
             signingConfig signingConfigs.release
         }
     }
+
+    flavorDimensions "version"
+    productFlavors {
+        jilebi {
+          dimension "version"
+          applicationIdSuffix ".jilebi"
+        }
+    }
 }
 
 flutter {
